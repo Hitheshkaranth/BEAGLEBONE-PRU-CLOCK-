@@ -1,3 +1,8 @@
+/* 
+* This overlay is based on the BB-PRU-01 overlay
+* Written by HITHESH KARANTH for BEAGLE-BONE-PRU-CLOCK
+*/
+
 #include <stdio.h>
 #include <prussdrv.h>
 #include <pruss_intc_mapping.h>
