@@ -1,14 +1,12 @@
-// PRU program to provide a fixed-frequency clock on P9_27 (pru0_pru_r30_5). This
-// program can be executed on either PRU0 or PRU1, but will have to be altered if
-// you wish to change the clock to output on a different pin. Memory controlled:
-// This program was writen by Derek Molloy to align with the content of the book 
-// Exploring BeagleBone
+// This program is copied from Dreck Molly program for PRU 
+// the output is gained in pin P9_27 or pru30
 
 .origin 0                        // start of program in PRU memory
 .entrypoint START                // program entry point (for a debugger)
 
 #define	DELAY   11  		 // choose the delay value to suit the frequency required
 				 // 1 gives a 20MHz clock signal, increase from there
+				 //the total time period can be calcuclated by formula 2*(5+2*(DELAY-1))
 START:
 	MOV	r1, DELAY	 // load the DELAY value into r1
 
