@@ -1,3 +1,7 @@
+/* 
+* This overlay is based on the BB-PRU-01 overlay
+* Written by HITHESH KARANTH for BEAGLE-BONE-PRU-CLOCK
+*/
 /dts-v1/;
 /plugin/;
 
