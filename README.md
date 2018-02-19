@@ -3,7 +3,7 @@ The follwowing repository consists of code for generating clock pulses using Pro
 
 Proceedure for running the code on PRU-
 
-0.Check wehater the kernel version is 3.8.x and wheater pasm (PRU-ASSEMBLER) is installed:
+0.Check wheater the kernel version is 3.8.x and pasm (PRU-ASSEMBLER) is installed:
 for the kernel version use- uname -r
 for the pasm version use - pasm --version
 
