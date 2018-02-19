@@ -1,0 +1,41 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+ /* This overlay is compatible with the following devices */
+ compatible = "ti,beaglebone", "ti,beaglebone-black";
+
+ /* overlay identification */
+ part-number = "BB-WAVE-GEN";
+ version = "00A0";
+
+ /* Define the ressources used by this overlay */
+ exclusive-use = "P9.27", "pru0";
+
+ fragment@0{
+ /* target in the device tree */
+ target = <&am33xx_pinmux>;
+ 
+ /* The overlay we define */
+ __overlay__{
+     /* Change the GPIO-Pin mode according to the pinmuxing table */
+     pru_pru_pins: pinmux_pru_pru_pins{
+         /* The first value (0x1a4) is the offset of the pin's address */
+         /* Value two is the pin-multiplexing (pinmux) mode, we want */
+         /* 25 is hex for mode 5, output, pull-up enabled */
+         /* See the pinmux table (very bottom) */
+         pinctrl-single,pins = < 0x1a4 0x25 >;
+         };
+     };
+ };
+
+ fragment@2{
+     target = <&pruss>;
+     __overlay__{
+         status = "okay";
+
+         pinctrl-names = "default";
+         pinctrl-0 = <&pru_pru_pins>;
+         };
+     };
+};
