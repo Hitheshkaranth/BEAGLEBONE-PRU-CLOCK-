@@ -6,6 +6,7 @@ Proceedure for running the code on PRU-
 0.Check wheater the kernel version is 3.8.x and pasm (PRU-ASSEMBLER) is installed:
 for the kernel version use- uname -r
 for the pasm version use - pasm --version
+if the PASM is not installed download and install pasm
 
 1.Generate .dtbo or device tree boolean for the provided .dts or device tree source this can be acheived using the command 
 dtc -O dtb -o BB-WAVE-GEN:00A0.dtbo -b 0 -@ BB-WAVE-GEN:00A0.dts
